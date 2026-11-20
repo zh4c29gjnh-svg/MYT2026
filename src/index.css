@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Prompt', 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+#myt-print-mount {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* When isolated print mount is active, hide everything else in body */
+  body.myt-printing-active > *:not(#myt-print-mount) {
+    display: none !important;
+  }
+
+  body.myt-printing-active > #myt-print-mount {
+    display: block !important;
+    width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* Fallback if user presses Ctrl+P directly without clicking button */
+  header, nav, .print\:hidden, button, footer {
+    display: none !important;
+  }
+}

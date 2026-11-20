@@ -1,0 +1,6 @@
+{
+  "name": "MYT Construction & Receipt Management",
+  "description": "ระบบจัดการงานก่อสร้าง ใบเสร็จรับเงินหัก ณ ที่จ่าย ใบส่งมอบงาน แผนงานโครงการ และรายงานประจำวัน",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
